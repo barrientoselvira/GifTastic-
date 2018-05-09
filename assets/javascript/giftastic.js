@@ -43,9 +43,18 @@ $.ajax({
 })
     }
 
+//ON CLICK EVENT FUNCTIONS
+//======================================================================
+$("#addGif").on("click", function(event){
+    event.preventDefault();
 
+ var movie = $("#addGift").val().trim();
+//adding the movie from the array
+movieCategories.push(movie);
+console.log(movieCategories);
 
+$(document).on("click", ".movie", displayMovieInfo);
 
-
+});
 
 });
