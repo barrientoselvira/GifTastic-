@@ -5,10 +5,12 @@ $(document).ready(function(){
 //====================================================================
 
 var movieCategories = ["horror", "sci-fi", "comedy", "drama", "documentaries"];
+console.log(movieCategories)
 
 function theButtons()
 {
-    console.log("hello")
+    //Empty previous buttons
+    $("#buttonsHome").empty();
     //Create button for each category
     for (var i = 0; i < movieCategories.length; i++)
     {
@@ -25,10 +27,9 @@ function theButtons()
     }
 }
 
-
 //FUNCTIONS
 //=====================================================================
-function showGif()
+function displayMovieInfo()
 {
 //API key 
 var movie = $(this).attr("data-name");
@@ -39,22 +40,75 @@ $.ajax({
     method: "GET"
 }).then (function(response){
     var results = response.data
-    console.log(response)
+    console.log(results)
+
+{
+
+// //For loop for categories
+   for(var i = 0; i < results.length; i++ )
+   {
+//  // //Create a div for each gif
+  var theMovie = $("<div>")
+//  // //Add class to theMovie
+   theMovie.addClass("theMovieClass")
+//  //Var for rating
+   var rating = results[i].rating;
+//  //paragraph with rating
+   var ratingInfo = $("<p>").text("Rating:" + rating);
+//  //Create image info
+   var gifPic = $("<img>");
+//  //Give image tag src to show image
+   gifPic.attr("src", results[i].images.fixed_height_still.url);
+//  //Give gif data-still attribute
+   gifPic.attr("data-still", results[i].images.fixed_height.url);
+   gifPic.attr("data-state", "still");
+   gifPic.addClass("gifPic");
+//   //Append ratingInfo and gifPic to theMovie
+   theMovie.append(ratingInfo);
+   theMovie.append(gifPic);
+//  //Append theMovie to html
+   $("#gifHome").prepend(theMovie);
+   }
+}
+    })
+}
+
+ $(document).on("click", ".gifButton", displayMovieInfo);
+ //Add gifs when theButtons are clicked 
+ $("#addGif").on("click", function(event)
+ {
+     event.preventDefault();
+    //Grab input from html
+    var gif = $("#gifInput").val().trim();
+   //Add cartoon to gifArray
+    movieCategories.push(gif);
+    //Empty value in input box
+     $("#gifInput").val("")
+    //Call theButtons function to update new button
+     theButtons();
+ })
+
+$("body").on("click", ".gifPic", function(){
+    var state = $(this).attr("data-state");
+    //if the pic is still
+    if(state === "still")
+{
+    $(this).attr("src", $(this).attr("data-animate"));
+    //change to animate
+    $(this).attr("data-state", "animate");
+}
+//changes animate to still
+else
+{
+    $(this).attr("src", $(this).attr("data-still"));
+    //change to still
+    $(this).attr("data-state", "still");
+}
 })
-    }
 
-//ON CLICK EVENT FUNCTIONS
+
+
+//INITIALIZE MAIN FUNCITON
 //======================================================================
-$("#addGif").on("click", function(event){
-    event.preventDefault();
-
- var movie = $("#addGift").val().trim();
-//adding the movie from the array
-movieCategories.push(movie);
-console.log(movieCategories);
-
-$(document).on("click", ".movie", displayMovieInfo);
-
-});
-
+theButtons();
 });
