@@ -58,6 +58,11 @@ background-color: white;
     width: 120px;
 }
 
+p{
+    font-family: 'Lobster', cursive;
+    font-size: 24px;
+}
+
 #gifForm {
     padding: 20px;
     font-family: 'Raleway', sans-serif;
