@@ -1,0 +1,88 @@
+h1 {
+    font-family: 'Lobster', cursive;
+   
+}
+
+body {
+    background-image: url("../images/david-pisnoy-542340-unsplash.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+} 
+
+.jumbotron{
+    margin-top: 20px;
+    background-color: white;
+}
+
+h2{
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+}
+
+#addGif{
+    font-family: 'Raleway', sans-serif;
+    margin: 20px;
+    border: 3px solid orange;
+    background-color: white;
+    padding: 15px;
+    border-radius: 0;
+    height: 50px;
+    width: 120px;
+}
+
+#buttonsHome{
+margin-top: 30px;
+background-color: white;
+}
+
+.gifButton {
+    font-family: 'Raleway', sans-serif;
+    margin: 20px;
+    border: 3px solid orange;
+    background-color: white;
+    padding: 15px;
+    border-radius: 0;
+    height: 50px;
+    width: 120px;
+}
+
+#resetButton {
+    font-family: 'Raleway', sans-serif;
+    margin: 20px;
+    border: 3px solid orange;
+    background-color: white;
+    padding: 15px;
+    border-radius: 0;
+    height: 50px;
+    width: 120px;
+}
+
+#gifForm {
+    padding: 20px;
+    font-family: 'Raleway', sans-serif;
+    background-color: white;
+}
+
+#gifPic{
+height: 80px;
+width: 100px;
+}
+
+.theMovieClass{
+    font-family: 'Raleway', sans-serif;
+    border: 3px solid orange;
+    position: relative;
+    float: left;
+    padding: 10px;
+    margin: 30px;
+}
+
+#gifHome{
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    height: 1700px;
+    width: 100%;
+    background-color: white;
+}

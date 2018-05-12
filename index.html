@@ -2,30 +2,56 @@
 <html>
 <head>
 
-   <script src=https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js></script>
+ <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+<script src=https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
+
+<link rel="stylesheet" type="text/css" href="assets/css/giftastic.css">
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
 
         <title>GifTastic</title>
 
 </head>
 <body>
 
-    <h1>Everyday and every occasion is in need of a gif</h1>
+<div class="container">
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+         <h1 class="display-3">GifTastic</h1>
+         <p class="lead"> <h2>Everyday and every occasion is in need of a gif</h2></p>
+    </div>
+ </div>
 
 
-<div id="buttonsHome">
-</div>
-<!--Adds gif to page-->
-<form id="gifForm">
-    <label for="gifInput">Type the category</label>
+
+ <form id="gifForm">
+        <h3>Need a gif? Search here:</h3>
+
+    <label for="gifInput"></label>
     <input type="text" id="gifInput"><br>
 
-    <input id="addGif" type="submit" value="Add">
+    <input id="addGif" type="submit" value="look">
+    <input id="resetButton" type="submit" value="reset">
 </form>
+
+<div class="row">
+        <div id="buttonsHome"></div>
+</div>
+
+<!--Adds gif to page-->
+
+
+
+
 <!--Shows gifs-->
 <div id="gifHome">
+
+</div>
 
 </div>
 
